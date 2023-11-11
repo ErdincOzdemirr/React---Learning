@@ -1,25 +1,31 @@
 import './App.css';
-import Header from './components/header';
-import React from "react";
+import User from './components/user';
 
-const name = "Erdinc"
-const surname = "Ozdemir"
-const isLoggedIn = false;
+const friends = [
+{id: 1,
+name:"Erdinc"},
+{id: 2,
+name:"Hava"},
+{id: 3,
+name:"Ismail"},
+]
 
 function App(){
-  // return React.createElement('div', null, "Hello")
   return (
     <>
-      {/* <h1>
-     {isLoggedIn && `Benim adım ve soyadım "${name} ${surname}" dir.`}
-      </h1>
-      {!isLoggedIn && "Giris Yapilmadi"} */}
-      <h1>
-        {isLoggedIn ? `Benim adım ve soyadım "${name} ${surname}" dir.` : "Giris Yapilmadi"}
-      </h1>
+      <User
+        // name="Erdinc"
+        surName="Ozdemir"
+        isLoggedIn={true}
+        age={"30"}
+        friends={friends}
+        address={{
+          title:"Kocaeli",
+          zip: "41700"
+        }}
+      />
     </>
   )
-
 }
 
 export default App;
